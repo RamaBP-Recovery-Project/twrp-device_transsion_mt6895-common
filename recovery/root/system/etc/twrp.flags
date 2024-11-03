@@ -11,33 +11,48 @@
 /vbmeta_vendor		emmc		/dev/block/by-name/vbmeta_vendor									flags=display=vbmeta_vendor;slotselect;backup;flashimg
 
 # Firmware
-/dtbo			emmc		/dev/block/by-name/dtbo											flags=display=dtbo;slotselect;backup
-/metadata		ext4		/dev/block/by-name/metadata										flags=display=metadata;backup
-/misc			emmc		/dev/block/by-name/misc											flags=display=misc;backup
+/dtbo			emmc		/dev/block/by-name/dtbo											flags=display=dtbo;slotselect;backup;flashimg
+/metadata		ext4		/dev/block/by-name/metadata										flags=display=metadata;backup;flashimg
+/misc			emmc		/dev/block/by-name/misc											flags=display=misc;backup;flashimg
 
 # Sensitive Data
-/nvcfg			ext4		/dev/block/by-name/nvcfg										flags=display=nvcfg;backup
-/persist		ext4		/dev/block/by-name/persist										flags=display=persist;fsflags=ro
-/persist_image		emmc		/dev/block/by-name/persist										flags=display=persist;backup
-/persistent		emmc		/dev/block/by-name/frp											flags=display=persistent;backup
+/nvcfg			ext4		/dev/block/by-name/nvcfg										flags=display=nvcfg;backup;flashimg
+/persist		emmc		/dev/block/by-name/persist										flags=display=persist;backup;flashimg
+/frp			emmc		/dev/block/by-name/frp											flags=display=frp;backup;flashimg
 
 # IMEI and modem related
-/nvdata			ext4		/dev/block/by-name/nvdata										flags=display=nvdata;backup
-/protect_f		ext4		/dev/block/by-name/protect1										flags=display=protect_f;backup
-/protect_s		ext4		/dev/block/by-name/protect2										flags=display=protect_s;backup
-/nvram			emmc		/dev/block/by-name/nvram										flags=display=nvram;backup
+/nvdata			emmc		/dev/block/by-name/nvdata										flags=display=nvdata;backup;flashimg
+/protect_1		ext4		/dev/block/by-name/protect1										flags=display=protect_1;backup;flashimg
+/protect_2		ext4		/dev/block/by-name/protect2										flags=display=protect_2;backup;flashimg
+/nvram			emmc		/dev/block/by-name/nvram										flags=display=nvram;backup;flashimg
+/proinfo		emmc		/dev/block/by-name/proinfo										flags=display=proinfo;backup;flashimg
 
 # Standard MediaTeks's partitions
+/mvpu_algo		emmc		/dev/block/by-name/mvpu_algo										flags=display=mvpu_algo;slotselect;backup;flashimg
+/tkv			emmc		/dev/block/by-name/tkv											flags=display=tkv;slotselect;backup;flashimg
+/efuse			emmc		/dev/block/by-name/efuse										flags=display=efuse;slotselect;backup;flashimg
+/gz			emmc		/dev/block/by-name/gz											flags=display=gz;slotselect;backup;flashimg
+/gpueb			emmc		/dev/block/by-name/gpueb										flags=display=gpueb;slotselect;backup;flashimg
+/mcupm			emmc		/dev/block/by-name/mcupm										flags=display=mcupm;slotselect;backup;flashimg
+/sspm			emmc		/dev/block/by-name/sspm											flags=display=sspm;slotselect;backup;flashimg
+/vcp			emmc		/dev/block/by-name/vcp											flags=display=vcp;slotselect;backup;flashimg
+/ccu			emmc		/dev/block/by-name/ccu											flags=display=ccu;slotselect;backup;flashimg
+/scp			emmc		/dev/block/by-name/scp											flags=display=scp;slotselect;backup;flashimg
+/dpm			emmc		/dev/block/by-name/dpm											flags=display=dpm;slotselect;backup;flashimg
+/pi_img			emmc		/dev/block/by-name/pi_img										flags=display=pi_img;slotselect;backup;flashimg
+/mcf_ota		emmc		/dev/block/by-name/mcf_ota										flags=display=mcf_ota;slotselect;backup;flashimg
+/md1img			emmc		/dev/block/by-name/md1img										flags=display=md1img;slotselect;backup;flashimg
+/apusys			emmc		/dev/block/by-name/apusys										flags=display=apusys;slotselect;backup;flashimg
+/lk			emmc		/dev/block/by-name/lk											flags=display=lk;slotselect;backup;flashimg
 /expdb			emmc		/dev/block/by-name/expdb										flags=display=expdb
-/logo			emmc		/dev/block/by-name/logo											flags=display=logo;slotselect;backup
+/logo			emmc		/dev/block/by-name/logo											flags=display=logo;slotselect;backup;flashimg
 /otp			emmc		/dev/block/by-name/otp											flags=display=otp
 /seccfg			emmc		/dev/block/by-name/seccfg										flags=display=seccfg
-/spmfw			emmc		/dev/block/by-name/spmfw										flags=display=spmfw;slotselect
-/tee1			emmc		/dev/block/by-name/tee1											flags=display=tee1
-/tee2			emmc		/dev/block/by-name/tee2											flags=display=tee2
+/spmfw			emmc		/dev/block/by-name/spmfw										flags=display=spmfw;slotselect;backup;flashimg
+/tee			emmc		/dev/block/by-name/tee											flags=display=tee;slotselect;backup;flashimg
 
 # Transsion partition
-/tranfs			ext4		/dev/block/by-name/tranfs										flags=display=tranfs
+/tranfs			emmc		/dev/block/by-name/tranfs										flags=display=tranfs;slotselect;backup;flashimg
 
 # Removable Storage
 /external_sd		auto		/dev/block/mmcblk1p1				/dev/block/mmcblk0p1					flags=display="Micro SD Card";storage;wipeingui;removable;backup=0
