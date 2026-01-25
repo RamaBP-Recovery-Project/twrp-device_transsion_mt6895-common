@@ -3,15 +3,15 @@ import /init.device.rc
 
 on init
     setprop sys.usb.configfs 1
-    setprop sys.usb.controller "musb-hdrc"
+    setprop sys.usb.controller "11201000.usb0"
     setprop sys.usb.ffs.aio_compat 0
     export LD_LIBRARY_PATH /system/lib64:/vendor/lib64:/vendor/lib64/hw
     setprop crypto.ready 1
     start boot-hal-1-2
 
 on fs
-    wait /dev/block/platform/soc/11270000.ufshci
-    symlink /dev/block/platform/soc/11270000.ufshci /dev/block/bootdevice
+    wait /dev/block/platform/soc/112b0000.ufshci
+    symlink /dev/block/platform/soc/112b0000.ufshci /dev/block/bootdevice
     install_keyring
 
 on boot
